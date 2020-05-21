@@ -27,7 +27,7 @@ node{
 		echo 'Project deployment'
 			}
 	stage('ATF deploy'){
-			echo ''Initialize pipeline'
+			echo 'Initialize pipeline'
 		}
 	stage('Init Keytab'){
 			echo 'Clean Up Workspace and Checkout SCM'
