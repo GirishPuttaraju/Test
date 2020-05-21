@@ -12,7 +12,7 @@ node{
 		echo 'Create project archive'
 	}
 	stage('Upload project to Artifactory server){
-			echo 'Upload project to Artifactory server'
+		echo 'Upload project to Artifactory server'
 		}
 	stage('Download playbooks from Artifactory server'){
 		echo 'Download playbooks from Artifactory server'
@@ -27,7 +27,7 @@ node{
 			echo 'ATF deploy'
 		}
 	stage('Init Keytab'){
-			echo 'Init Keytab'){'
+			echo 'Init Keytab'
 		}
 	stage('Tibco EMS'){
 		echo 'Download playbooks from Artifactory server'
