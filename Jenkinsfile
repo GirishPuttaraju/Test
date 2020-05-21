@@ -1,6 +1,6 @@
 node{
 	stage('Initialize pipeline'){
-			echo ''Initialize pipeline'
+			echo 'Initialize pipeline'
 		}
 	stage('Clean Up Workspace and Checkout SCM'){
 			echo 'Clean Up Workspace and Checkout SCM'
@@ -9,13 +9,10 @@ node{
 		echo 'Branch Management'
 		}
 	stage('Create project archive'){
-		echo 'Deployment done'
+		echo 'Create project archive'
 	}
 	stage('Upload project to Artifactory server){
-			echo ''Initialize pipeline'
-		}
-	stage('Clean Up Workspace and Checkout SCM'){
-			echo 'Clean Up Workspace and Checkout SCM'
+			echo 'Upload project to Artifactory server'
 		}
 	stage('Download playbooks from Artifactory server'){
 		echo 'Download playbooks from Artifactory server'
@@ -27,10 +24,10 @@ node{
 		echo 'Project deployment'
 			}
 	stage('ATF deploy'){
-			echo 'Initialize pipeline'
+			echo 'ATF deploy'
 		}
 	stage('Init Keytab'){
-			echo 'Clean Up Workspace and Checkout SCM'
+			echo 'Init Keytab'){'
 		}
 	stage('Tibco EMS'){
 		echo 'Download playbooks from Artifactory server'
