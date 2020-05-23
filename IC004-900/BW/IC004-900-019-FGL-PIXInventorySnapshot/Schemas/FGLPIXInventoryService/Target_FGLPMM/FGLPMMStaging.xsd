@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) --><xs:schema xmlns:fglpmm="http://www.fglsports.com/schema/fglpmmstaging/tables/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.fglsports.com/schema/fglpmmstaging/tables/v1">
+ 
+  <xs:element name="FGL_WMS_INV_SNAP_BATCH">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element maxOccurs="1" minOccurs="0" name="RECORD_SEQUENCE"
+      		type="xs:int" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="RECORD_DATE"
+      		type="xs:date" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="TRANSACTION_NUMBER" type="xs:int" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="TRANSACTION_SEQUENCE" type="xs:int" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="TRANSACTION_TYPE" type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="TRANSACTION_CODE" type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="ACTION_CODE"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="REASON_CODE"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="SNAPSHOT_DATE"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="PHYSICAL_WH_NUMBER" type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="INVENTORY_TYPE"
+      		type="xs:string">
+      	</xs:element>
+      	<xs:element maxOccurs="1" minOccurs="0" name="SKU_NUMBER"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="SKU_TYPE"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="ACTUAL_QTY"
+      		type="xs:int" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="SNAPSHOT_USER"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0"
+      		name="PACKED_STORE_NUMBER" nillable="true" type="xs:int" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="PROCESSED"
+      		type="xs:string" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="PROCESSED_DATE"
+      		type="xs:date" />
+      	<xs:element maxOccurs="1" minOccurs="0" name="ERROR_CODE"
+      		type="xs:int" />
+
+
+
+
+
+      </xs:sequence>
+    </xs:complexType>
+        </xs:element>
+     
+
+
+</xs:schema>

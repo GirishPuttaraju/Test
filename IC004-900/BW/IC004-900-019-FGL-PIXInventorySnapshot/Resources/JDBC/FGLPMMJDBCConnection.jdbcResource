@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_pIAR4Y3jEemnxaRsr2b-SA" name="JDBC.FGLPMMJDBCConnection" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_pINtQI3jEemnxaRsr2b-SA" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_pINtQY3jEemnxaRsr2b-SA">
+    <substitutionBindings xmi:id="_mXBZ8I6REemDQI6_hy2WDA" template="maxConnections" propName="/JDBC/FGLPMMDB/MaxConnections"/>
+    <substitutionBindings xmi:id="_oYydYI6REemDQI6_hy2WDA" template="username" propName="/JDBC/FGLPMMDB/Username"/>
+    <substitutionBindings xmi:id="_rFhwcI6REemDQI6_hy2WDA" template="password" propName="/JDBC/FGLPMMDB/Password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_pIQwkI3jEemnxaRsr2b-SA">
+      <substitutionBindings xmi:id="_smd-wI6REemDQI6_hy2WDA" template="jdbcDriver" propName="/JDBC/FGLPMMDB/DBDriver"/>
+      <substitutionBindings xmi:id="_vODsEI6REemDQI6_hy2WDA" template="dbURL" propName="/JDBC/FGLPMMDB/DBURL"/>
+      <substitutionBindings xmi:id="_xCGckI6REemDQI6_hy2WDA" template="loginTimeout" propName="/JDBC/FGLPMMDB/LoginTimeOutInSec"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

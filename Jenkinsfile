@@ -1,41 +1,39 @@
-node{
-	stage('Initialize pipeline'){
-			echo 'Initialize pipeline'
-		}
-	stage('Clean Up Workspace and Checkout SCM'){
-			echo 'Clean Up Workspace and Checkout SCM'
-		}
-	stage('Branch Management'){
-		echo 'Branch Management'
-		}
-	stage('Create project archive'){
-		echo 'Create project archive'
-	}
-	stage('Upload project to Artifactory server){
-		echo 'Upload project to Artifactory server'
-		}
-	stage('Download playbooks from Artifactory server'){
-		echo 'Download playbooks from Artifactory server'
-		}
-	stage('Extract Ansible archive'){
-		echo 'Extract Ansible archive'
-		}
-	stage('Project deployment'){
-		echo 'Project deployment'
-			}
-	stage('ATF deploy'){
-			echo 'ATF deploy'
-		}
-	stage('Init Keytab'){
-			echo 'Init Keytab'
-		}
-	stage('Tibco EMS'){
-		echo 'Download playbooks from Artifactory server'
-		}
-	stage('Tibco BW Check'){
-		echo 'Extract Ansible archive'
-		}
-	stage('Build and Deploy BW Artifacts'){
-		echo 'Build and Deploy BW Artifacts'
-		}
+#!groovy
+
+/****************************************************************************/
+/* Jenkins Pipeline File                                                    */
+/* Version: 2.0                                                             */
+/* Author: Girish Gowda, Created: 2020-05-23                                  */
+/* Last Modified: 2020-05-25                                                */
+/* Description: Jenkins Pipeline sample library template                    */
+/* For any changes, edit the schedule, deployment, cleanup, and rollback    */
+/* stages below.                                                            */
+/****************************************************************************/
+
+// Add DSS shared libraries
+// ---------------------------------------------------------------
+@Library('dss-pipeline-library')
+@Library('ci-cd-configurations')
+
+def conf = SharedConfiguration.get()
+
+node(conf.jenkinsSlave2) {
+
+    properties([disableConcurrentBuilds()])
+
+    deleteDir()
+    checkout scm
+    bitbucketGitInfo()
+
+    library(identifier: "${env.GIT_REPO}@${env.BRANCH_NAME}", retriever: legacySCM(scm))
+    def libraryName = "${env.BRANCH_NAME}".replaceAll('/', '_')
+    echo "Jenkins Library Expected Is vars/${libraryName}.groovy"
+
+    try {
+        "${libraryName}"()
+    } catch (NoSuchMethodError err) {
+        echo "\u27A1  Caught: ${err}"
+        error("Check if vars/${libraryName}.groovy exists. It's need to run pipeline on your branch. "  
+            + "If the file exists, then please refer to the error message in the console.")
+    }
 }

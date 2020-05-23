@@ -1,0 +1,27 @@
+atf-configuration-root:
+  environment:
+    MY_SERVER_HOST: localhost
+  configuration:
+    version: 3
+    tibco:
+      bw_d:
+        host: 'http://localhost:8777/tea'
+        user: 'admin'
+        password: 'admin'
+      ems_dev_tcp:
+        url: 'tcp://localhost:7222'
+        user: 'admin'
+        password: 'admin'
+  services:
+    bw_dev:
+      type: TibcoBW
+      parameters:
+        host: conf:tibco.bw_d.host
+        user: conf:tibco.bw_d.user
+        password: conf:tibco.bw_d.password
+    ems_dev:
+      type: TibcoEMS
+      parameters:
+        ems_url: conf:tibco.ems_dev_tcp.url
+        user: conf:tibco.ems_dev_tcp.user
+        password: conf:tibco.ems_dev_tcp.password

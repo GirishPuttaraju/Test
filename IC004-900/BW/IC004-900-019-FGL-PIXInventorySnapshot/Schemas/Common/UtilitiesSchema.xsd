@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/UtilitiesSchema" elementFormDefault="qualified" targetNamespace="http://www.example.org/UtilitiesSchema">
+
+    <complexType name="JDBCRetry">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="retryFlag" type="boolean"/>
+    	</sequence>
+    </complexType>
+
+    <element name="JDBCRetry" type="tns:JDBCRetry"/>
+
+    <element name="UtilParams">
+    	<complexType>
+    		<sequence>
+    			<element maxOccurs="1" minOccurs="0" name="UUID" type="string"/>
+    		</sequence>
+    	</complexType>
+  </element>
+</schema>

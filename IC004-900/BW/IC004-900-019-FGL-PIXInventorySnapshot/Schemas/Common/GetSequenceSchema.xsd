@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/GetSeqUnceSchema" xmlns:tns="http://www.example.org/GetSeqUnceSchema" elementFormDefault="qualified">
+
+    <element name="GetSequenceNumber"
+    	type="tns:GetSequenceNumberType">
+    </element>
+    
+    <complexType name="GetSequenceNumberType">
+    	<sequence>
+    		<element name="SequenceNumber" type="int"></element>
+    		<element name="STGSchemaName" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>
